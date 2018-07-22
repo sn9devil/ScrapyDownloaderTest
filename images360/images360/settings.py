@@ -14,12 +14,12 @@ BOT_NAME = 'images360'
 SPIDER_MODULES = ['images360.spiders']
 NEWSPIDER_MODULE = 'images360.spiders'
 
-
+MAX_PAGE = 50
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'images360 (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
