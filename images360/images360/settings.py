@@ -14,6 +14,9 @@ BOT_NAME = 'images360'
 SPIDER_MODULES = ['images360.spiders']
 NEWSPIDER_MODULE = 'images360.spiders'
 
+MONGO_URI = 'localhost'
+MONGO_DB = 'images360'
+
 MAX_PAGE = 50
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'images360 (+http://www.yourdomain.com)'
@@ -64,9 +67,12 @@ ROBOTSTXT_OBEY = False
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'images360.pipelines.Images360Pipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'images360.pipelines.ImagePipeline': 300,
+    'images360.pipelines.MongoPipeline': 301,
+}
+# ImagePipeline 的 下载目录
+IMAGES_STORE = './images'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
