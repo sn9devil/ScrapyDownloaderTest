@@ -15,7 +15,13 @@ SPIDER_MODULES = ['scrapyseleniumtest.spiders']
 NEWSPIDER_MODULE = 'scrapyseleniumtest.spiders'
 
 KEYWORDS = ['iPad']
-MAX_PAGE = 5
+MAX_PAGE = 30
+
+SELENIUM_TIMEOUT = 20
+PHANTOMJS_SERVICE_ARGS = ['--load-images=false', '--disk-cache=true']
+
+MONGO_URI = 'localhost'
+MONGO_DB = 'taobao'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'scrapyseleniumtest (+http://www.yourdomain.com)'
@@ -54,9 +60,9 @@ ROBOTSTXT_OBEY = False
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'scrapyseleniumtest.middlewares.ScrapyseleniumtestDownloaderMiddleware': 543,
-#}
+DOWNLOADER_MIDDLEWARES = {
+   'scrapyseleniumtest.middlewares.SeleniumMiddleware': 543,
+}
 
 # Enable or disable extensions
 # See https://doc.scrapy.org/en/latest/topics/extensions.html
@@ -66,9 +72,9 @@ ROBOTSTXT_OBEY = False
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'scrapyseleniumtest.pipelines.ScrapyseleniumtestPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'scrapyseleniumtest.pipelines.MongoPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
