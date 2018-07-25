@@ -25,4 +25,3 @@ class ChinaSpider(CrawlSpider):
         loader.add_xpath('source', '//div[@id="chan_newsInfo"]/text()', re='来源：(.*)')
         loader.add_value('website', '中华网')
         yield loader.load_item()
-        
