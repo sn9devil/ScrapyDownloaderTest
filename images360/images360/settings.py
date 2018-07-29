@@ -17,6 +17,12 @@ NEWSPIDER_MODULE = 'images360.spiders'
 MONGO_URI = 'localhost'
 MONGO_DB = 'images360'
 
+MYSQL_HOST = 'localhost'
+MYSQL_DATABASE = 'images360'
+MYSQL_USER = 'root'
+MYSQL_PASSWORD = ''
+MYSQL_PORT = 3306
+
 MAX_PAGE = 50
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'images360 (+http://www.yourdomain.com)'
